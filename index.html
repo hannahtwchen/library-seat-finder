@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Seat Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">COMPUTATIONAL THINKING PROTOTYPE</p>
+        <h1>Find a library seat that fits today</h1>
+        <p>Choose what matters and compare available seats. The final decision always stays with you.</p>
+      </header>
+
+      <section class="controls" aria-labelledby="controls-title">
+        <div class="controls-heading">
+          <div><p class="eyebrow">1 · YOUR CONTEXT</p><h2 id="controls-title">Preferences</h2></div>
+          <button id="reset" class="quiet-button" type="button">Reset</button>
+        </div>
+        <p class="hint">Use the <strong>Power outlet</strong> menu below to say whether you want a seat with an outlet, do not want one, or have no preference.</p>
+        <div id="preferences" class="preference-grid"></div>
+        <button id="recommend" class="primary-button" type="button">Find my seats</button>
+      </section>
+
+      <section id="results" class="results" aria-live="polite" aria-labelledby="results-title">
+        <div class="results-heading"><div><p class="eyebrow">2 · RECOMMENDATIONS</p><h2 id="results-title">Available seats</h2></div><p id="summary" class="summary">Choose preferences, then find seats.</p></div>
+        <div id="seat-list" class="seat-list"></div>
+      </section>
+    </main>
+    <template id="seat-template">
+      <article class="seat-card">
+        <div class="seat-top"><div><p class="rank"></p><h3></h3></div><strong class="score"></strong></div>
+        <p class="status"></p>
+        <dl class="features"></dl>
+        <button class="choose-button" type="button">Choose this seat</button>
+      </article>
+    </template>
+    <script src="script.js"></script>
+  </body>
+</html>
